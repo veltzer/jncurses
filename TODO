@@ -1,0 +1,17 @@
+move to OO (controvertial)
+==========================
+- stop using SWIG. need to do JNI object oriented on my own.
+- exceptions. Errors from curses functions should cause exceptions.
+	This needs to be discussed.
+
+small stuff
+===========
+- addch does not work because swig wraps the "chtype" typedef which is just char with
+	a java type. Make him stop doing that!
+- get the so file inside the library and have the library load it on initialization.
+	steal the code from jna (sun microsystems).
+- get rm from autoconf instead of hardcoding it in Makefile.in. How do I do that ? It seems that autoconf cannot find rm ? This is stupid!!! ? maybe write an autoconf macro ?
+- write more demo programs in Java (fancy demos).
+- do a perl script which checks that I'm doing all the functions in all the library
+	(objdump ? manual pages ?)
+- documentation - get the documentation for the functions and place them in the i file. How the fuck do I do that ?

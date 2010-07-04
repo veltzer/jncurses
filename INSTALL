@@ -1,0 +1,12 @@
+From source (after "make distclean", this is what you should get with the tarball):
+1. ./configure
+2. make
+all products (lib and jar) are now in lib.
+
+From scratch (after "make allclean", this is what I use for new versions of autoconf):
+1. ./get_tools.sh
+2. autoconf
+and then as above...
+
+Documentation:
+make docs

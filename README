@@ -1,0 +1,32 @@
+This is a java JNI based interface to GNU ncurses on Linux.
+It exposes the entire ncurses functionality as a single class with static methods.
+Could be used to write shiny console applications ("vi" re-implemented in java anyone ?!?).
+Could be used to write installation programs in java.
+Could be used for many more things that I cannot even think about.
+
+Rationale:
+- a need to write console applicatons in Java (System.out is a joke).
+- a need to connect with ncurses.
+- as a consequence JNI seems the best.
+- other similar libaries exist but they do not provide low level interface to curses.
+- instead, they try to provide a higher level API that works the same on linux and windows.
+- I do not care about windows!
+- I'll state it again: I do not care about windows!
+- I want full curses and actually ncurses support.
+- other curses implementations are not maintained.
+- I don't care about other os's except linux.
+
+The following design descisions were made:
+1. No compatibility with windows. Windows is a legacy platform and there is no need to support it. Windows users should migrate to Linux to reduce migration costs in the future.
+2. No compatibility with other UNIX systems curses implementations. See (1) for the reason.
+3. No patches will be accepted which compilcate the code to provide compatibility with anything but ncurses.
+4. BSD systems are fine and when they use ncurses they should be able to use this product. Same goes for legacy UNIX systems.
+5. Better try to provide ncurses on the target platform instead of sending me a patch for reduced functionality - it will not be accepted. You may fork at will (but I guess you already know that...).
+6. LGPL is the license to enable other types of licenses to run on top of this one.
+7. I prefer if you write free source on top of this library but I don't twist your hand...:)
+8. Every function in ncurses will be exposed.
+9. No hight level abstraction will be provided. It's your or other peoples goal to do that.
+10. Actually, I myself am writing several projects that provide a higher level interface to this on top of this project, but that is a different tale.
+
+			Mark Veltzer, 2008
+			mark.veltzer@gmail.com

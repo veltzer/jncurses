@@ -1,0 +1,6 @@
+* 8/9/07 build system complete
+* 5/4/08 many small changes and documentation created
+* 11/4/08 fixed the build system even more: separated tests and code 
+* 9/3/09 better test and better build system
+* 9/3/09 bumped version to 0.2 (this seems to be something that I may use
+someday...) 
