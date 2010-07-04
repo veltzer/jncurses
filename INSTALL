@@ -4,8 +4,8 @@ From source (after "make distclean", this is what you should get with the tarbal
 all products (lib and jar) are now in lib.
 
 From scratch (after "make allclean", this is what I use for new versions of autoconf):
-1. ./get_tools.sh
-2. autoconf
+1. ./get_tools.sh (requires 'automake' package)
+2. autoconf (requires 'autoconf
 and then as above...
 
 Documentation:

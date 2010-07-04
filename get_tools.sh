@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # this is a small script which gets the requirements for autoconf
 # on a standard linux system. If you do not have these files, and
@@ -7,4 +7,6 @@
 # you will not need this as part of a regular install since you
 # probably got them with the package and the configure script
 
-cp /usr/share/automake/{install-sh,config.sub,config.guess} .
+# the package on Ubuntu is automake
+
+cp /usr/share/automake-1.11/{install-sh,config.sub,config.guess} .
