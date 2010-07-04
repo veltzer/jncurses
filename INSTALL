@@ -1,3 +1,6 @@
+Packages required:
+- swig
+
 From source (after "make distclean", this is what you should get with the tarball):
 1. ./configure
 2. make
