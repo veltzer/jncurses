@@ -1,4 +1,4 @@
-AC_INIT(jncurses,0.2,Mark Veltzer <mark.veltzer@gmail.com>)
+AC_INIT(jncurses,0.2,veltzer)
 AC_CANONICAL_HOST()
 AC_CANONICAL_TARGET()
 AC_CONFIG_SRCDIR(jncurses.i)
