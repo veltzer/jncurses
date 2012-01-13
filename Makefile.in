@@ -38,7 +38,7 @@ ifeq ($(TYPE),c)
 	SWIGFLAGS=
 	OPLEVEL=-O2 -fno-strict-aliasing
 endif
-SWIGFLAGS+=-Wall -Werror
+SWIGFLAGS+=-Wall -Werror -Wno-unused-but-set-variable
 
 # here come the real targets
 SOURCES_I=$(shell find . -name "*.i")
@@ -47,7 +47,7 @@ SOURCES_C=$(addsuffix _wrap.$(SUFFIX),$(SOURCES_B))
 SOURCES_O=$(addsuffix _wrap.o,$(SOURCES_B))
 C_INCLUDES=$(addprefix -I,$(JNI_INCLUDE_DIRS))
 # -O2 creates compilation errors
-CFLAGS+=-Wall -Werror $(OPLEVEL) -shared $(C_INCLUDES)
+CFLAGS+=-Wall -Werror -Wno-unused-but-set-variable $(OPLEVEL) -shared $(C_INCLUDES)
 JAVA_FLAGS=-Xlint:deprecation -Xlint:unchecked
 OUTLIB=lib$(PACKAGE_NAME).so
 OUTJAR=$(PACKAGE_NAME).jar
