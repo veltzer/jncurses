@@ -9,4 +9,7 @@
 
 # the package on Ubuntu is automake
 
+# this script needs to be kept in bash and not sh since the curly
+# braces syntax below is only respected by bash...
+
 cp /usr/share/automake-1.11/{install-sh,config.sub,config.guess} .
