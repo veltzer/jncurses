@@ -1,4 +1,4 @@
-AC_INIT(jncurses,0.2,veltzer)
+AC_INIT(jncurses,0.3,veltzer)
 AC_CANONICAL_HOST()
 AC_CANONICAL_TARGET()
 AC_CONFIG_SRCDIR(jncurses.i)

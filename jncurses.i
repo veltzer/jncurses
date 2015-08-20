@@ -529,15 +529,15 @@ int printw(const char *fmt, ...);
 int wprintw(WINDOW *win, const char *fmt, ...);
 int mvprintw(int y, int x, const char *fmt, ...);
 int mvwprintw(WINDOW *win, int y, int x, const char *fmt, ...);
-int vwprintw(WINDOW *win, const char *fmt, va_list varglist);
-int vw_printw(WINDOW *win, const char *fmt, va_list varglist);
+//int vwprintw(WINDOW *win, const char *fmt, va_list varglist);
+//int vw_printw(WINDOW *win, const char *fmt, va_list varglist);
 /* scanw */
 int scanw(char *fmt, ...);
 int wscanw(WINDOW *win, char *fmt, ...);
 int mvscanw(int y, int x, char *fmt, ...);
 int mvwscanw(WINDOW *win, int y, int x, char *fmt, ...);
-int vw_scanw(WINDOW *win, char *fmt, va_list varglist);
-int vwscanw(WINDOW *win, char *fmt, va_list varglist);
+//int vw_scanw(WINDOW *win, char *fmt, va_list varglist);
+//int vwscanw(WINDOW *win, char *fmt, va_list varglist);
 /* scr_dump */
 int scr_dump(const char *filename);
 int scr_restore(const char *filename);

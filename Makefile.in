@@ -38,7 +38,8 @@ ifeq ($(TYPE),c)
 	SWIGFLAGS=
 	OPLEVEL=-O2 -fno-strict-aliasing
 endif
-SWIGFLAGS+=-Wall -Werror -Wno-unused-but-set-variable
+SWIGFLAGS+=-Wall -Werror
+# -Wno-unused-but-set-variable
 
 # here come the real targets
 SOURCES_I=$(shell find . -name "*.i")
