@@ -30,13 +30,13 @@ ifeq ($(TYPE),cpp)
 	LINK=$(CXX)
 	SUFFIX=cxx
 	SWIGFLAGS=-c++
-	OPLEVEL=-O2 -fno-strict-aliasing
+	OPLEVEL=-O2 -fno-strict-aliasing -fPIC
 endif
 ifeq ($(TYPE),c)
 	LINK=$(CC)
 	SUFFIX=c
 	SWIGFLAGS=
-	OPLEVEL=-O2 -fno-strict-aliasing
+	OPLEVEL=-O2 -fno-strict-aliasing -fPIC
 endif
 SWIGFLAGS+=-Wall -Werror
 # -Wno-unused-but-set-variable
@@ -48,7 +48,7 @@ SOURCES_C=$(addsuffix _wrap.$(SUFFIX),$(SOURCES_B))
 SOURCES_O=$(addsuffix _wrap.o,$(SOURCES_B))
 C_INCLUDES=$(addprefix -I,$(JNI_INCLUDE_DIRS))
 # -O2 creates compilation errors
-CFLAGS+=-Wall -Werror -Wno-unused-but-set-variable $(OPLEVEL) -shared $(C_INCLUDES)
+CFLAGS+=-Wall -Werror -Wno-unused-but-set-variable -Wno-unused-function $(OPLEVEL) -shared $(C_INCLUDES)
 JAVA_FLAGS=-Xlint:deprecation -Xlint:unchecked
 OUTLIB=lib$(PACKAGE_NAME).so
 OUTJAR=$(PACKAGE_NAME).jar
@@ -72,7 +72,7 @@ default: $(OUTLIB) $(OUTJAR)
 
 # linking the o files to a single shared lib
 $(OUTLIB): $(SOURCES_O)
-	$(LINK) $(CFLAGS) -o $(OUTLIB) $(LIBS) $(SOURCES_O)
+	$(LINK) $(CFLAGS) -o $(OUTLIB) $(SOURCES_O) $(LIBS)
 
 $(OUTJAR): $(OUTLIB)
 	$(MKDIR) -p $(AUTOCLASSES)
