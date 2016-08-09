@@ -2,6 +2,8 @@ AC_INIT(jncurses,0.3,veltzer)
 AC_CANONICAL_HOST()
 AC_CANONICAL_TARGET()
 AC_CONFIG_SRCDIR(jncurses.i)
+AM_INIT_AUTOMAKE
+AC_CONFIG_HEADERS([config.h])
 
 # find standard programs
 AC_PROG_CC()
@@ -9,17 +11,17 @@ dnl AC_PROG_CXX()
 dnl AC_PROG_CPP()
 dnl AC_PROG_INSTALL()
 
-m4_include(/usr/share/aclocal/ac_pkg_swig.m4)
+m4_include(/usr/share/aclocal/ax_pkg_swig.m4)
 AC_PROG_SWIG()
 
-m4_include(/usr/share/aclocal/ac_prog_java.m4)
-m4_include(/usr/share/aclocal/ac_prog_java_works.m4)
-m4_include(/usr/share/aclocal/ac_prog_javac.m4)
-m4_include(/usr/share/aclocal/ac_prog_javac_works.m4)
-m4_include(/usr/share/aclocal/ac_prog_javadoc.m4)
-m4_include(/usr/share/aclocal/ac_prog_javah.m4)
-m4_include(/usr/share/aclocal/ac_prog_jar.m4)
-m4_include(/usr/share/aclocal/ac_jni_include_dir.m4)
+m4_include(/usr/share/aclocal/ax_prog_java.m4)
+m4_include(/usr/share/aclocal/ax_prog_java_works.m4)
+m4_include(/usr/share/aclocal/ax_prog_javac.m4)
+m4_include(/usr/share/aclocal/ax_prog_javac_works.m4)
+m4_include(/usr/share/aclocal/ax_prog_javadoc.m4)
+m4_include(/usr/share/aclocal/ax_prog_javah.m4)
+m4_include(/usr/share/aclocal/ax_prog_jar.m4)
+m4_include(/usr/share/aclocal/ax_jni_include_dir.m4)
 # the next two lines are needed because otherwise we would find gcj
 JAVA=java
 JAVAC=javac

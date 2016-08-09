@@ -12,6 +12,7 @@ packs=[
 	'swig-examples', # for the examples
 	'swig-doc', # for the documentation
 	'gcc-doc', # for development
+	'autoconf-archive', # for swig file
 ]
 
 args=['sudo','apt-get','install','--assume-yes']

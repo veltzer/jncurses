@@ -1,0 +1,25 @@
+#! /bin/sh
+
+# fcmp
+# Copyright (c) 1999-2000 Theodore C. Belding
+# University of Michigan Center for the Study of Complex Systems
+# <mailto:Ted.Belding@umich.edu>
+# <http://www-personal.umich.edu/~streak/>                
+#
+# This file is part of the fcmp distribution. fcmp is free 
+# software; you can redistribute and modify it under the terms of the 
+# GNU Library General Public License (LGPL), version 2 or later.  This 
+# software comes with absolutely no warranty. See the file COPYING for 
+# details and terms of copying.
+#
+# File: bootstrap
+#
+# Description: This script runs the GNU Autotools to generate the
+# configure script.  You only need to run this script if the configure
+# script is not present, or if you have changed configure.in,
+# acinclude.m4, acconfig.h, or Makefile.am. You must have GNU M4,
+# Autoconf, Automake, and possibly Libtool installed in order to run
+# this script.
+
+cp /usr/share/libtool/build-aux/ltmain.sh .
+aclocal && autoheader && automake --gnu --add-missing && autoconf

@@ -4,19 +4,26 @@
 # exclude patterns (uncomment them if you want to use them):
 # *.[oa]
 # *~
-autom4te.cache/
-config.guess
-config.sub
-configure
-install-sh
-Makefile
-config.log
-config.status
-autobin/
-autosrc/
+/autom4te.cache/
+/config.guess
+/config.sub
+/configure
+/install-sh
+/Makefile
+/config.log
+/config.status
+/autobin/
+/autosrc/
 jncurses.jar
 jncurses_wrap.c
 jncurses_wrap.o
 libjncurses.so
 bin/
 test.jar
+*~
+/missing
+/install-sh
+/ltmain.sh
+/aclocal.m4
+/compile
+/config.h.in
