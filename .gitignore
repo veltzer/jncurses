@@ -28,3 +28,5 @@ test.jar
 /aclocal.m4
 /compile
 /config.h.in
+/config.h
+/stamp-h1
