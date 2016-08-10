@@ -6,6 +6,7 @@ move to OO (controvertial)
 
 small stuff
 ===========
+- make the new Makefile.ac file actually build the project.
 - addch does not work because swig wraps the "chtype" typedef which is just char with
 	a java type. Make him stop doing that!
 - get the so file inside the library and have the library load it on initialization.
