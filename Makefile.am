@@ -17,6 +17,7 @@ MKDIR=mkdir
 RMDIR=rmdir
 #TEST_RUN_ARGS=-verbose:jni -Xcheck:jni -Xcheck:nabounds
 TEST_RUN_ARGS=
+SWIGFLAGS=
 
 # causes seconday targets not to be deleted
 .SECONDARY:
@@ -25,25 +26,16 @@ TEST_RUN_ARGS=
 # notice that optimization level depends on C/CPP selection
 # because of a bug in swig which produces code with warnings
 # under C which cannot be opimized using -O2
-TYPE=c
-ifeq ($(TYPE),cpp)
-	LINK=$(CXX)
-	SUFFIX=cxx
-	SWIGFLAGS=-c++
-	OPLEVEL=-O2 -fno-strict-aliasing -fPIC
-endif
-ifeq ($(TYPE),c)
-	LINK=$(CC)
-	SUFFIX=c
-	SWIGFLAGS=
-	OPLEVEL=-O2 -fno-strict-aliasing -fPIC
-endif
+LINK=$(CC)
+SUFFIX=c
+SWIGFLAGS=
+OPLEVEL=-O2 -fno-strict-aliasing -fPIC
 SWIGFLAGS+=-Wall -Werror
 # -Wno-unused-but-set-variable
 
 # here come the real targets
-SOURCES_I=$(shell find . -name "*.i")
-SOURCES_B=$(basename $(SOURCES_I))
+sourcesi=$(shell find . -name "*.i")
+SOURCES_B=$(basename $(sourcesi))
 SOURCES_C=$(addsuffix _wrap.$(SUFFIX),$(SOURCES_B))
 SOURCES_O=$(addsuffix _wrap.o,$(SOURCES_B))
 C_INCLUDES=$(addprefix -I,$(JNI_INCLUDE_DIRS))
@@ -103,4 +95,4 @@ test: $(OUTTEST)
 # first show the tools
 debug:
 	$(ECHO) $(JAVAC) $(JAVAH) $(JAVA) $(JAVADOC) $(JAR) $(CC) $(CXX) $(SWIG) $(JNI_INCLUDE_DIRS) $(LIBS) $(PACKAGE_NAME) $(RM) $(ECHO)
-	$(ECHO) $(SOURCES_I) $(SOURCES_B) $(SOURCES_C) $(SOURCES_O) $(C_INCLUDES) $(C_FLAGS) $(JAVA_FLAGS) $(OUTLIB) $(OUTJAR)
+	$(ECHO) $(sourcesi) $(SOURCES_B) $(SOURCES_C) $(SOURCES_O) $(C_INCLUDES) $(C_FLAGS) $(JAVA_FLAGS) $(OUTLIB) $(OUTJAR)

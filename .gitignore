@@ -10,6 +10,7 @@
 /configure
 /install-sh
 /Makefile
+/Makefile.in
 /config.log
 /config.status
 /autobin/

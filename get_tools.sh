@@ -12,4 +12,4 @@
 # this script needs to be kept in bash and not sh since the curly
 # braces syntax below is only respected by bash...
 
-cp /usr/share/automake-1.11/{install-sh,config.sub,config.guess} .
+ln -fs /usr/share/automake-1.15/{install-sh,config.sub,config.guess} .
