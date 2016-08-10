@@ -26,3 +26,4 @@ aclocal
 autoheader
 automake --gnu --add-missing
 autoconf
+./configure
