@@ -78,7 +78,9 @@ clean:
 distclean: clean
 	-$(RM) -rf autom4te.cache config.cache config.status config.log Makefile aclocal.m4 missing
 allclean: distclean
-	-$(RM) -rf configure config.sub config.guess install-sh
+	$(RM) -rf configure config.sub config.guess install-sh
+clean_git:
+	git clean -qffxd
 $(OUTTEST): $(OUTJAR) $(SOURCES_T)
 	$(MKDIR) -p $(CLASSES)
 	$(JAVAC) -classpath $(OUTJAR) -Xlint:deprecation -Xlint:unchecked -d $(CLASSES) -sourcepath $(SRCPATH) $(SOURCES_T)
