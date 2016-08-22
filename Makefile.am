@@ -61,6 +61,7 @@ SOURCES_T=$(shell find $(SRCPATH) -name "*.java")
 # to treat them as by products which are to be deleted after producing
 # the targets
 default: $(OUTLIB) $(OUTJAR)
+	@true
 
 # linking the o files to a single shared lib
 $(OUTLIB): $(SOURCES_O)
