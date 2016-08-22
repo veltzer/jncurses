@@ -1,0 +1,12 @@
+---
+packages:
+        - name: swig
+          reason: for creating the interfaces
+        - name: swig-examples
+          reason: for the examples
+        - name: swig-doc
+          reason: for the documentation
+        - name: gcc-doc
+          reason: for development
+        - name: autoconf-archive
+          reason: for swig file
