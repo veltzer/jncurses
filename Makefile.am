@@ -60,6 +60,7 @@ SOURCES_T=$(shell find $(SRCPATH) -name "*.java")
 # deleted by make because of the use of implicit rules which cause make
 # to treat them as by products which are to be deleted after producing
 # the targets
+.DEFAULT_GOAL:=default
 default: $(OUTLIB) $(OUTJAR)
 	@true
 
@@ -89,9 +90,11 @@ $(OUTTEST): $(OUTJAR) $(SOURCES_T)
 test: $(OUTTEST)
 	LD_LIBRARY_PATH=. $(JAVA) $(TEST_RUN_ARGS) -classpath $(OUTTEST):$(OUTJAR) $(MAINCLASS)
 
-%_wrap.$(SUFFIX): %.i
+jncurses_wrap.c: jncurses.i
 	$(MKDIR) -p $(SWIGPATH)
 	$(SWIG) $(SWIGFLAGS) -java -outdir $(SWIGPATH) -package $(PACKAGE_NAME) $<
+jncurses_wrap.o: jncurses_wrap.c
+	$(CC) $(CFLAGS) -c $< -o $@
 %.o: %.cxx
 	$(CXX) -c $< -o $@
 

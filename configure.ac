@@ -4,7 +4,7 @@ AC_CANONICAL_TARGET()
 AC_CONFIG_SRCDIR(jncurses.i)
 AC_CONFIG_HEADERS([config.h])
 dnl AM_INIT_AUTOMAKE(jncurses,0.3)
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([subdir-objects])
 
 # find standard programs
 AC_PROG_CC()
@@ -13,7 +13,8 @@ dnl AC_PROG_CPP()
 dnl AC_PROG_INSTALL()
 
 m4_include(/usr/share/aclocal/ax_pkg_swig.m4)
-AX_PROG_SWIG()
+AX_PKG_SWIG(, [], [ AC_MSG_ERROR([SWIG is required to build..]) ])
+dnl AX_PROG_SWIG()
 
 m4_include(/usr/share/aclocal/ax_prog_java.m4)
 m4_include(/usr/share/aclocal/ax_prog_java_works.m4)
