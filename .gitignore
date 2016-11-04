@@ -30,3 +30,7 @@ test.jar
 /config.h.in
 /config.h
 /stamp-h1
+# python related
+__pycache__
+*.pyo
+*.pyc
