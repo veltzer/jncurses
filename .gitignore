@@ -15,6 +15,7 @@
 /config.status
 /autobin/
 /autosrc/
+/COPYING
 jncurses.jar
 jncurses_wrap.c
 jncurses_wrap.o
