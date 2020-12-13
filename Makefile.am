@@ -17,7 +17,6 @@ MKDIR=mkdir
 RMDIR=rmdir
 #TEST_RUN_ARGS=-verbose:jni -Xcheck:jni -Xcheck:nabounds
 TEST_RUN_ARGS=
-SWIGFLAGS=
 
 # causes seconday targets not to be deleted
 .SECONDARY:
@@ -28,9 +27,8 @@ SWIGFLAGS=
 # under C which cannot be opimized using -O2
 LINK=$(CC)
 SUFFIX=c
-SWIGFLAGS=
+SWIGFLAGS=-Wall -Werror
 OPLEVEL=-O2 -fno-strict-aliasing -fPIC
-SWIGFLAGS+=-Wall -Werror
 # -Wno-unused-but-set-variable
 
 # here come the real targets
