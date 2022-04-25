@@ -1,4 +1,4 @@
-d.packs=[
+packages=[
     # for creating the interfaces
     'swig',
     # for the examples
