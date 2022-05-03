@@ -35,3 +35,5 @@ test.jar
 __pycache__
 *.pyo
 *.pyc
+/.pydmt
+/out
