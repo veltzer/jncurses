@@ -32,8 +32,8 @@ test.jar
 /config.h
 /stamp-h1
 # python related
-__pycache__
-*.pyo
-*.pyc
+__pycache__/
+*.py[c]
 /.pydmt
 /out
+*.stamp
