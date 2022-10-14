@@ -1,12 +1,12 @@
 packages=[
     # for creating the interfaces
-    'swig',
+    "swig",
     # for the examples
-    'swig-examples',
+    "swig-examples",
     # for the documentation
-    'swig-doc',
+    "swig-doc",
     # for development
-    'gcc-doc',
+    "gcc-doc",
     # for swig file
-    'autoconf-archive',
+    "autoconf-archive",
 ]
