@@ -1,6 +1,7 @@
-AC_INIT(jncurses,0.3,veltzer)
+AC_INIT([jncurses],[0.3],[veltzer])
 AC_CANONICAL_HOST()
 AC_CANONICAL_TARGET()
+AC_CONFIG_FILES([Makefile])
 AC_CONFIG_SRCDIR(jncurses.i)
 AC_CONFIG_HEADERS([config.h])
 dnl AM_INIT_AUTOMAKE(jncurses,0.3)
@@ -46,4 +47,4 @@ AC_CHECK_LIB(menuw,menu_init)
 AC_CHECK_LIB(panel,new_panel)
 AC_CHECK_LIB(panelw,new_panel)
 
-AC_OUTPUT(Makefile)
+AC_OUTPUT
